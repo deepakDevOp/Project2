@@ -17,14 +17,10 @@ if ! command -v docker-compose &> /dev/null; then
         sudo chmod +x /usr/local/bin/docker-compose
 fi
 
-# Install docker scout
-mkdir ~/.docker/cli-plugins
-cd ~/.docker/cli-plugins
-curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
-
 # clone two tier flask app
 cd ~/Project2
 git clone https://github.com/LondheShubham153/two-tier-flask-app.git
 
 # add user to docker group
 sudo usermod -aG docker $(whoami)
+
